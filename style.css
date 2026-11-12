@@ -947,8 +947,8 @@ p {
     flex-shrink: 0;
     -webkit-mask-image: none;
     mask-image: none;
-    background-size: auto 115%;
-    background-position: 100% center;
+    background-size: auto 80%;
+    background-position: 90% center;
     background-repeat: no-repeat;
     }
 
@@ -980,6 +980,10 @@ p {
 
     .cta {
         align-items: center;
+    }
+
+    .imagen-cta{
+        min-height: 250px;
     }
 
     .cta p {
@@ -1015,8 +1019,8 @@ p {
     }
 
     .logo-redes {
-        width: 60px;
-        height: 60px;
+        width: 45px;
+        height: 45px;
     }
     .sede-tarjeta h3 {
       margin-top: 0;  
