@@ -986,7 +986,7 @@ p {
         min-height: 250px;
     }
 
-    .cta p {
+    .cta p, h2 {
         text-align: center;
     }
 
@@ -997,6 +997,10 @@ p {
 
     .cta .boton {
         margin-top: 18px;
+    }
+
+    .redes p{
+        margin-top: 10px;
     }
     .sedes {
         padding: 55px 20px;
@@ -1027,6 +1031,10 @@ p {
     }
     .sede-direccion {
         margin-top: 0;
+    }
+
+    .frase-contenido p{
+        font-size: 85%;
     }
     
 }
