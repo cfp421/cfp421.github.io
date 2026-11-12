@@ -1,0 +1,1071 @@
+/* CFP N.º 421 — Landing page creada con HTML y CSS */
+/* PRESETEO DE COLORES CON NOMBRES */
+:root {
+    --azul: #173b88;
+    --azul-oscuro: #14265d;
+    --violeta: #47207c;
+    --celeste: #0b9bc4;
+    --amarillo: #f4c44b;
+    --fondo: #f6f8fd;
+    --texto: #202b42;
+    --borde: #e2e8f2;
+}
+/* Aplicamos un border-box a todo para poder controlar el tamaño de los elementos */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Esto hace que cuando se haga click en un enlace vaya haciendo scroll hasta la sección correspondiente */
+    scroll-padding-top: 100px; /* Y esto que llegue unos 100px más arriba del elemento para que se visualize mejor */
+}
+/* Seteo para el body */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--texto); /* De esta manera usarmos el color presetado */
+    background: white;
+    line-height: 1.55;
+}
+
+a {
+    color: inherit; /* Usa color seteado en el elemento padre */
+}
+/* focus-visible hace que el elemento reaccione si la página se recorre con Tab */
+a:focus-visible, summary:focus-visible, .filtros label:focus-visible {
+    outline: 3px solid var(--celeste);
+    outline-offset: 3px;
+}
+/* Configuración para todos los contenedores */
+.contenedor {
+    width: min(1160px, 92%); /* La función min() elige el valor más chico. */
+    margin: auto;
+}
+
+h2{
+    font-family: "Domine", serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+p {
+    font-family: "Lato", sans-serif;
+     font-weight: 400;
+    font-style: normal;
+}
+/* CABECERA */
+.cabecera {
+    min-height: 86px;
+    width: 100%;
+    padding: 12px max(4%, calc((100% - 1160px)/2)); /* 12px de arriba y abajo
+                y de izquierda y derecha, max() elige el valor más grande entre el 4% del elemento padre
+                y la función calc que permite realizar cálculos matemáticos. Esto busca que la cabecera no supere los 1160px */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    background: #ffffff;
+    box-shadow: 0 3px 20px #17285a12;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(
+        to right,
+        white 0%,
+        #d0d0d0 50%,
+        white 100%
+    ) 1;
+}
+/* LOGO */
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--azul-oscuro);
+    white-space: nowrap; /* Esto fuerza a que el texto se mantenga en una sola línea, a pesar del ancho de pantalla */
+}
+
+.marca img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain; /* hace que la imagen se ajuste sin deformarse ni recortarse */
+    border-radius: 50%;
+}
+
+.marca span {
+    color: var(--celeste);
+}
+
+.cabecera nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 22px;
+}
+/* configuración en conjunto entre los enlaces de navbar de la cabecera y del pie de página */
+.cabecera nav a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all .3s ease;
+}
+/* hover de configuración anterior */
+.cabecera nav a:hover {
+    color: var(--celeste);
+}
+/* configuración para todos los botones que comparten la clase "boton" */
+.boton {
+    display: inline-flex; /* con esto se comporta como un elemento en línea ocupando el ancho necesario
+                            pero también organiza su contenido como un Flexbox */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 700;
+    padding: 13px 22px;
+    transition: all .2s;
+}
+
+.boton:hover {
+    transform: translateY(-2px); /* mueve el elemento 2px hacia arriba */
+}
+/* configuración para el botón de la nav-bar */
+.boton-nav {
+    background: var(--violeta);
+    color: white;
+    white-space: nowrap;
+}
+
+.inscripcion-menu {
+    display: none;
+}
+
+#menu-icono {
+    display: none;  /* Lo pongo en none para que solo se vea cuando la página esté colapsada de forma horizontal */ 
+}
+
+
+#menu-icono {
+    font-size: 35px;
+    z-index: 100; /* Para que esté sobre el header */
+    cursor: pointer; /* Para que aparezca la manito cuando ponemos el mouse encima */
+}
+
+#menu-toggle {
+    display: none; /* Nunca quiero que se vea el checkbox */
+}
+
+.menu-icono-action { 
+    display: none; /* Para que no se le pueda hacer click */
+}
+/* CUERPO DE PÁGINA */
+/* sección hero - principal */
+.hero {
+    position: relative; /* Esto va a servir como referencia para elementos que tenga dentro con position: absolute */
+    min-height: 520px;
+    background: linear-gradient(120deg, #f7faff 0%, #eaf3ff 100%);
+    overflow: hidden; /* lo que sobresalga se va a ocultar */
+    display: flex;
+    align-items: center;
+}
+
+.hero-foto {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 67%;
+    height: 100%;
+    background-image: url('assets/img/Collage.png');
+    background-size: cover;
+    background-position: center 45%; /* controla qué parte de la imagen queda visible cuando se recorta (x y) */
+    clip-path: polygon(24% 0, 100% 0, 100% 100%, 0 100%); /* clip-path permite definir qué parte de un elemento se ve y qué se recorta. 
+                                                            polygon crea una figura a partir de coordenadas: (izq arriba) */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 28%, black 100%); /* igual a mask-image. webkit sirve para
+                                                                                                determinadas versiones de navegadores */
+    mask-image: linear-gradient(to right, transparent 0%, black 28%, black 100%); /* propiedad que genera efecto esfumado.
+                            de izq a der, izq invisible, al 28% imagen visible total, y permanece visible hasta el final (100%) */
+}
+
+.hero-texto {
+    position: relative;
+    z-index: 1;
+    width: min(610px, 56%);
+    padding: 70px 0 70px max(4%, calc((100% - 1160px)/2));
+}
+
+.sobre-titulo {
+    color: var(--violeta);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+}
+
+.hero h1 {
+    margin: 15px 0 8px;
+    font-size: clamp(40px, 5.1vw, 74px); /* lo hace adaptable. Con clamp tenemos 3 valores (mín, ideal, máx */
+    line-height: 1.03;
+    letter-spacing: -2px;
+    color: var(--azul-oscuro);
+}
+
+.hero h1 span {
+    color: var(--violeta);
+}
+
+.hero h2 {
+    margin: 0;
+    font-size: clamp(20px, 2.3vw, 29px);
+    color: var(--azul);
+}
+
+.hero p {
+    max-width: 410px;
+    margin: 12px 0 25px;
+    font-size: 17px;
+}
+/* configuración para el botón del hero */
+.boton-primario {
+    background: var(--azul);
+    color: white;
+    box-shadow: 0 7px 18px #173b882c;
+}
+
+.boton-primario:hover {
+    background: var(--violeta);
+}
+/* segunda sección - beneficios */
+.beneficios {
+    padding: 48px 0 54px;
+    background: #f1f6fc;
+}
+
+.beneficios img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.beneficios h2 {
+    text-align: center;
+    margin: 0 0 30px;
+    font-size: clamp(25px, 3vw, 34px);
+    color: var(--azul-oscuro);
+}
+/* configuración para la grilla de la sección */
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+}
+
+.beneficios-grid>div { /* todos los div que sean hijos de beneficios-grid */
+    padding: 12px 20px;
+    border-right: 1px solid #cdd9e8;
+}
+
+.beneficios-grid>div:last-child { /* úlitmo div hijo de beneficios-grid */
+    border-right: 0;
+}
+
+/* tercera sección - cursos */
+.seccion-cursos {
+    padding: 65px 0 80px;
+}
+
+.encabezado-seccion {
+    display: flex;
+    align-items: baseline; /* alinea los textos con referencia a la misma línea base */
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    margin-bottom: 24px;
+}
+
+.encabezado-seccion h2 {
+    font-size: 34px;
+    margin: 0;
+    color: var(--azul-oscuro);
+}
+
+.encabezado-seccion p {
+    margin: 0;
+    color: #617089;
+}
+
+/* Filtros HTML + CSS: radios ocultos visualmente, pero accesibles por teclado */
+.catalogo {
+    position: relative; /* para usar como referencia los elementos hijos que tengan position: absolute */
+}
+/* en esta configuración vamos a "ocultar" los input */
+.filtro-radio {
+    position: absolute; /* esto lo queta del flujo normal y evitamos que interfiera con la org de los botones */
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+/* organización de los label que se van a ver como botones */
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+/* configuración de los label */
+.filtros label {
+    cursor: pointer; /* esto obliga a mostrar la mano típica cuando se pase por encima */
+    display: inline-block; /* para que podamos usar las opciones de un elemento de bloque siendo inline */
+    border: 1px solid #b9c8dd;
+    background: white;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all .3s;
+}
+
+.filtros label:hover {
+    border-color: var(--azul);
+    background: #edf4ff;
+}
+/* el próximo bloque cambia la apariencia del filtro seleccionado (el botón va a aparecer en azul) */
+#f-todos:checked~.filtros label[for="f-todos"], /* busca el primer hermano que cumpla la condición (label correspondiente) */
+#f-digital:checked~.filtros label[for="f-digital"],
+#f-gastronomia:checked~.filtros label[for="f-gastronomia"],
+#f-climatizacion:checked~.filtros label[for="f-climatizacion"],
+#f-marketing:checked~.filtros label[for="f-marketing"],
+#f-comunicacion:checked~.filtros label[for="f-comunicacion"],
+#f-administracion:checked~.filtros label[for="f-administracion"] {
+    background: var(--azul);
+    border-color: var(--azul);
+    color: white;
+}
+
+/* recordemos que con focus-visible el elemento reacciona si la página se recorre con Tab */
+.filtro-radio:focus-visible~.filtros { /* En este caso la configuración la va a tomar toda la caja que contiene los filtros */
+    outline: 2px dashed var(--celeste);
+    outline-offset: 4px;
+}
+/* la próxima clase la comparten todos los DIV contenedores de áreas (todos, digital, gastronomía, etc.) */
+.grilla-cursos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 columnas con ancho mínimo de 0 y máximo de 1fr */
+    gap: 20px;
+    align-items: start;
+}
+
+/* configuración para cada artículo en general (áreas y cursos) */
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+    box-shadow: 0 5px 18px #1c32600d;
+    background: #ffffff;
+    min-height: 470px;
+}
+
+.tarjeta:hover {
+    border-color: #a7c5e7;
+    box-shadow: 0 12px 30px #1c326019;
+}
+/* configuración para los íconos de cada artículo */
+.tarjeta-icono {
+    width: 68px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #e6f5ff, #f2ebff);
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+/* configuración para todos los textos de los artículos */
+.tarjeta h3 {
+    margin: 0 0 5px;
+    font-size: 21px;
+    color: var(--azul-oscuro);
+}
+
+.tarjeta-descripcion {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #5d6980;
+}
+
+.tarjeta ul {
+    margin: 0 0 18px;
+    padding-left: 19px;
+    font-size: 14px;
+}
+
+.tarjeta li {
+    margin: 3px 0;
+}
+/* configuración del <details> o detalles desplegables */
+.ampliacion {
+    margin-top: auto;
+}
+/* botón "ver más" - "ver menos" */
+.ampliacion summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid var(--azul);
+    color: var(--azul);
+    border-radius: 9px;
+    font-weight: 700;
+}
+/* pseudoelemento para quitar el marcador predeterminado que traen los elementos <summary> */
+.ampliacion summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Ocultamos inicialmente "Ver menos" */
+.ampliacion .ver-menos {
+    display: none;
+}
+
+/* Cuando se abre, ocultamos "Ver más" */
+.ampliacion[open] .ver-mas {
+    display: none;
+}
+
+/* Cuando se abre, mostramos "Ver menos" */
+.ampliacion[open] .ver-menos {
+    display: inline;
+}
+/* configuración para los hover del summary */
+.ampliacion summary:hover, .ampliacion[open] summary {
+    background: var(--azul);
+    color: white;
+}
+/* configuración para los DIV contenedores que están dentro de los <details> */
+.detalle-contenido {
+    margin-top: 16px;
+    padding: 15px;
+    background: var(--fondo);
+    border-radius: 10px;
+    font-size: 14px;
+}
+/* configuración para los textos de esos DIV */
+.detalle-contenido h4 {
+    margin: 10px 0 3px;
+    color: var(--azul);
+}
+
+.detalle-contenido h4:first-child {
+    margin-top: 0;
+}
+
+.detalle-contenido p {
+    margin: 0 0 9px;
+}
+
+.detalle-contenido .aviso {
+    font-size: 12px;
+    color: #6b5b37;
+    background: #fff5d9;
+    padding: 9px;
+    border-radius: 7px;
+}
+
+.detalle-contenido a {
+    display: inline-block;
+    margin-top: 5px;
+    font-weight: bold;
+    color: var(--violeta);
+}
+
+/* SECCIÓN NUESTRAS SEDES */
+.sedes {
+    padding: 80px 20px;
+    background-color: #f5f7fc;
+}
+/* DIV contenedor de sección sedes */
+.contenedor-sedes {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* Encabezado de sección sedes */
+.sedes-encabezado {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sedes-encabezado h2 {
+    font-size: 36px;
+    color: #202b50;
+    margin-bottom: 12px;
+    margin-top: 0;
+}
+
+.sedes-encabezado p {
+    font-size: 16px;
+    color: #667085;
+    line-height: 1.6;
+}
+/* configuración para la grilla con las sedes */
+.sedes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+/* Tarjetas de la grilla de sedes */
+.sede-tarjeta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #e5e9f2;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all .3s ease;
+}
+
+.sede-tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+}
+/* configuración de las etiquetas de cada sede */
+.sede-etiqueta {
+    display: inline-block;
+    background-color: #e8edff;
+    color: #3455b5;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 7px 12px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+/* configuración de textos de tarjetas */
+.sede-tarjeta h3 {
+    font-size: 23px;
+    color: #202b50;
+    margin-bottom: 0;
+}
+
+.sede-direccion {
+    font-size: 15px;
+    color: #667085;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+/* Enlace a Google Maps */
+.mapa-sede {
+    width: 80%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.mapa-sede iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+/* configuración para la sección inscripción */
+.franja-final {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 400px;
+    margin: 20px;
+}
+
+.imagen-cta{
+    background-image: linear-gradient(
+            rgba(255, 255, 255, 0.3),
+            rgba(255, 255, 255, 0.3)
+        ), url(assets/img/fondo-grupo.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+    padding: 100px max(24px, calc((100vw - 1160px)/2));
+    padding-right: 35px;
+    color: black;
+}
+
+.cta h2 {
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 0 0 5px;
+}
+
+.cta p {
+    margin: 0;
+    font-size: 15px;
+    opacity: .9;
+}
+
+.boton-claro {
+    background: var(--amarillo);
+    color: #18213b;
+    white-space: nowrap;
+    margin-left: 0;
+}
+/* Configuración para la sección redes sociales */
+.social {
+    padding: 26px 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px 30px 0;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(
+        to right,
+        white 0%,
+        black 50%,
+        white 100%
+    ) 1;
+}
+
+.social h2 {
+    font-size: 20px;
+    color: var(--azul-oscuro);
+    margin-bottom: 0;
+}
+
+.social p {
+    font-size: 15px;
+    color: #667085;
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-top: 0;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+.logo-redes {
+    width: 70px;
+    transition: all .3s ease;
+    border: 2px solid transparent;
+    border-radius: 20px;
+}
+
+.logo-redes:hover {
+   transform: translateY(-2px);
+   border: 2px solid var(--violeta);
+}
+
+/* FRASE INSTITUCIONAL */
+
+.frase-institucional {
+    background: white;
+    padding: 80px 5%;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.frase-contenido {
+    max-width: 900px;
+    margin: auto;
+    padding-top: 10px;
+}
+
+.frase-institucional p {
+    font-family: "Edu NSW ACT Cursive", cursive;
+    font-size: clamp(18px, 2.2vw, 28px);
+    font-style: italic;
+    line-height: 1.4;
+    color: #667085;
+    margin: 0 0 24px;
+}
+
+.pie {
+    padding: 25px 0;
+    background: #f1f6fc;
+}
+
+.pie-contenido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.pie strong {
+    color: var(--azul-oscuro);
+    font-size: 22px;
+}
+
+.pie small {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.pie nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.pie-contenido>span {
+    color: #647087;
+    font-size: 12px;
+}
+.enlace-icono {
+    width: 30px;
+    height: 30px;
+    display: block;
+    transition: all .3s ease;
+}
+
+.enlace-icono:hover{
+    transform: translateY(-2px);
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(
+        to right,
+        white 20%,
+        #929292 50%,
+        white 80%
+    ) 1;
+}
+
+@media(max-width:1050px) {
+    .cabecera {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .hero-texto {
+        width: 60%;
+    }
+    .hero p{
+        max-width: 300px;
+    }
+
+    .cta {
+        flex-wrap: wrap;
+        padding: 30px;
+    }
+
+}
+
+@media(max-width:975px) {
+    .grilla-cursos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .mapa-sede {
+        width: 100%;
+    }
+    .enlace-icono {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media(max-width:760px) {
+    .cabecera nav {
+        gap: 12px;
+    }
+
+    .hero {
+        min-height: 420px;
+        height: auto;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .sobre-titulo {
+    color: var(--violeta);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+    }
+
+    .hero-texto {
+        width: 52%;
+        padding: 35px 0 35px 5%;
+        text-align: left;
+        position: relative;
+    }
+
+    .hero h1 {
+        font-size: clamp(30px, 4.8vw, 38px);
+        line-height: 1.1;
+    }
+
+    .hero-foto {
+        position: relative;
+        width: 48%;
+        height: 420px;
+        flex-shrink: 0;
+        clip-path: none;
+        background-size: cover;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+    }
+
+    .beneficios-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 0;
+    }
+
+    .beneficios-grid>div:nth-child(2) {
+        border-right: 0;
+    }
+
+    .tarjeta {
+        min-height: 510px;  
+    }
+
+    .franja-final {
+        grid-template-columns: 1fr;
+    }
+
+    .imagen-cta{
+        min-height: 350px;
+    }
+
+    .sedes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pie-contenido{
+        justify-content: space-around;
+    }
+}
+
+@media(max-width:620px) {
+    .menu-icono-action{
+        display: block;
+    }
+
+    #menu-icono{
+        display: block;
+    }
+    .marca {
+        font-size: 21px;
+    }
+
+    .cabecera {
+        justify-content: space-between;
+    }
+
+    .cabecera nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        height: auto;
+        padding: 25px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        background-color: #021719ef;
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        color: white;
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            visibility 0.3s;
+    }
+
+    .cabecera nav a {
+        display: block;
+        margin: 7px 0;
+    }
+
+    .cabecera:has(#menu-toggle:checked) nav {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .boton-nav {
+        display: none;
+    }
+
+    .cabecera nav .inscripcion-menu {
+        display: block;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: stretch;
+        min-height: 0;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .hero-texto {
+        width: 100%;
+        padding: 30px 5% 10px;
+        text-align: left;
+        position: relative;
+    }
+
+    .hero h1 {
+        font-size: clamp(32px, 8vw, 40px);
+        line-height: 1.1;
+        margin: 12px 0;
+    }
+
+    .hero-foto {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    flex-shrink: 0;
+    -webkit-mask-image: none;
+    mask-image: none;
+    background-size: auto 115%;
+    background-position: 100% center;
+    background-repeat: no-repeat;
+    }
+
+    .hero-texto p {
+    max-width: none;
+    width: 100%;
+    }
+
+    .beneficios-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .grilla-cursos {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta {
+        min-height: 0;
+    }
+
+    .encabezado-seccion h2 {
+        font-size: 29px;
+    }
+
+    .filtros label {
+        font-size: 12px;
+        padding: 9px 11px;
+    }
+
+    .cta {
+        align-items: center;
+    }
+
+    .cta p {
+        text-align: center;
+    }
+
+    .cta-icono {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .cta .boton {
+        margin-top: 18px;
+    }
+    .sedes {
+        padding: 55px 20px;
+    }
+
+    .sedes-encabezado h2 {
+        font-size: 28px;
+    }
+
+    .sedes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sede-tarjeta {
+        padding: 25px;
+    }
+
+    .mapa-sede {
+        max-height: 200px;
+    }
+
+    .logo-redes {
+        width: 60px;
+        height: 60px;
+    }
+    .sede-tarjeta h3 {
+      margin-top: 0;  
+    }
+    .sede-direccion {
+        margin-top: 0;
+    }
+    
+}
+
+@media(prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .boton {
+        transition: none;
+    }
+}
+
+
+/* Vista general: conserva exactamente las seis tarjetas originales. */
+.grilla-individuales {
+    display: none;
+}
+
+#f-todos:checked~.grilla-areas {
+    display: grid;
+}
+
+/* Al elegir un área, ocultamos la grilla general y mostramos cursos individuales. */
+#f-digital:checked~.grilla-areas,
+#f-gastronomia:checked~.grilla-areas,
+#f-climatizacion:checked~.grilla-areas,
+#f-marketing:checked~.grilla-areas,
+#f-comunicacion:checked~.grilla-areas,
+#f-administracion:checked~.grilla-areas {
+    display: none;
+}
+
+#f-digital:checked~.cursos-digital,
+#f-gastronomia:checked~.cursos-gastronomia,
+#f-climatizacion:checked~.cursos-climatizacion,
+#f-marketing:checked~.cursos-marketing,
+#f-comunicacion:checked~.cursos-comunicacion,
+#f-administracion:checked~.cursos-administracion {
+    display: grid;
+}
+
+.tarjeta-individual {
+    min-height: 300px;
+}

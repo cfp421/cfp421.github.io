@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFP N°421 | La Matanza</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- https://remixicon.com -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- https://fonts.google.com -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- CABECERA -->
+    <header class="cabecera" id="inicio">
+        <!-- LOGO -->
+        <a href="#inicio" class="marca" aria-label="CFP 421">
+            <!-- aria-label: información para lectores de pantalla -->
+            <img src="assets/img/logo-cfp.png" alt="Logo del CFP 421">
+            <strong>CFP <span>421</span></strong>
+        </a>
+                <!-- BARRA DE NAVEGACIÓN -->
+        <nav aria-label="Navegación principal">
+            <a href="#">Inicio</a>
+            <a href="#cursos">Cursos</a>
+            <a href="#sedes">Sedes</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#inscripcion" class="inscripcion-menu">Inscribite</a>
+        </nav>
+        <!-- BOTÓN -->
+        <a class="boton boton-nav" href="#inscripcion">Inscribite</a>
+        <input type="checkbox" name="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icono-action">
+            <div class="ri-menu-line" id="menu-icono"></div>
+        </label>
+    </header>
+    <!-- CUERPO DE LA PÁGINA -->
+    <main>
+        <!-- SECCIÓN HERO -->
+        <section class="hero" aria-labelledby="titulo-hero">
+            <!-- DIV CON IMAGEN PRINCIPAL -->
+            <div class="hero-foto" aria-label="Ilustración de estudiantes y docentes en cursos del CFP"></div>
+            <!-- DIV CON TEXTO PRINCIPAL -->
+            <div class="hero-texto">
+                <span class="sobre-titulo">RED DE EDUCACIÓN CICM · LA MATANZA</span>
+                <h1 id="titulo-hero">TU FUTURO<br><span>ESTÁ ACÁ</span></h1>
+                <h2>Capacitate. Crecé. Trabajá.</h2>
+                <p>Formación técnica y profesional para jóvenes y adultos. Encontrá tu próximo aprendizaje.</p>
+                <a class="boton boton-primario" href="#cursos">Conocé nuestros cursos</a>
+            </div>
+        </section>
+        <!-- SEGUNDA SECCIÓN / BENEFICIOS -->
+        <section class="beneficios" aria-labelledby="titulo-beneficios">
+            <div class="contenedor">
+                <h2 id="titulo-beneficios">¿Por qué elegir el CFP 421?</h2>
+                <div class="beneficios-grid">
+                    <div>
+                        <img src="assets/img/cursos_calidad.png" alt="Cursos de calidad">
+                    </div>
+                    <div>
+                        <img src="assets/img/formacion_practica.png" alt="Formación práctica">
+                    </div>
+                    <div>
+                        <img src="assets/img/salida_laboral.png" alt="Salida laboral">
+                    </div>
+                    <div>
+                        <img src="assets/img/acompanamiento_personalizado.png" alt="Acompañamiento personalizado">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- TERCERA SECCIÓN / CURSOS -->
+        <section class="seccion-cursos" id="cursos" aria-labelledby="titulo-cursos">
+            <div class="contenedor">
+                <div class="encabezado-seccion">
+                    <h2 id="titulo-cursos">Nuestros cursos</h2>
+                    <p>Elegí el área que te interesa y conocé más.</p>
+                </div>
+                <!-- El próximo es el DIV que va a contener lo cursos y areas -->
+                <div class="catalogo">
+                    <!-- Radios: solo puede seleccionarse una categoría a la vez -->
+                    <input class="filtro-radio" type="radio" name="categoria" id="f-todos" checked>
+                    <input class="filtro-radio" type="radio" name="categoria" id="f-digital">
+                    <input class="filtro-radio" type="radio" name="categoria" id="f-gastronomia">
+                    <input class="filtro-radio" type="radio" name="categoria" id="f-climatizacion">
+                    <input class="filtro-radio" type="radio" name="categoria" id="f-marketing">
+                    <input class="filtro-radio" type="radio" name="categoria" id="f-comunicacion">
+                    <input class="filtro-radio" type="radio" name="categoria" id="f-administracion">
+                    <!-- DIV con los <label> correspondientes para facilitar su diseño en CSS -->
+                    <div class="filtros" role="group" aria-label="Filtrar cursos por área">
+                        <label for="f-todos">Todos</label>
+                        <label for="f-digital">Tecnología digital</label>
+                        <label for="f-gastronomia">Gastronomía</label>
+                        <label for="f-climatizacion">Climatización</label>
+                        <label for="f-marketing">Marketing</label>
+                        <label for="f-comunicacion">Comunicación</label>
+                        <label for="f-administracion">Administración</label>
+                    </div>
+                    <!-- DIV con lo que aparecerá si está seleccionado "todos" -->
+                    <div class="grilla-cursos grilla-areas">
+                        <!-- PRIMER ARTÍCULO / ÁREA TECNOLOGÍA DIGITAL -->
+                        <article class="tarjeta digital">
+                            <div class="tarjeta-icono" aria-hidden="true">💻</div>
+                            <h3>Tecnología digital</h3>
+                            <p class="tarjeta-descripcion">Desarrollá habilidades para crear y trabajar con tecnología.
+                            </p>
+                            <ul>
+                                <li>Habilidades digitales</li>
+                                <li>Programación</li>
+                                <li>Diseño de Página Web</li>
+                                <li>Capacitación en IA</li>
+                            </ul>
+                            <!-- <details> nos va a permitir mostrar u ocultar el contenido -->
+                            <details class="ampliacion">
+                                <!-- <summary> sirve como título o texto donde se puede hacer click para desplegar el contenido de <details> -->
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <!-- DIV para el contenido de <details> -->
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Herramientas digitales básicas, introducción a programación, creación de sitios
+                                        web, uso responsable de IA y herramientas de gestión.</p>
+                                    <h4>Duración orientativa</h4>
+                                    <p>Entre 90 y 180 horas, según el curso.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Consultá la duración en particular de cada curso y la
+                                        disponibilidad real con el CFP.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                    <!-- noopener impide que la página que se abre pueda controlar la original / mejora la seguridad -->
+                                    <!-- noreferrer evita que la página destino reciba desde donde llegó el usuario / mejora la privacidad -->
+                                </div>
+                            </details>
+                        </article>
+                        <!-- SEGUNDO ARTÍCULO / ÁREA GASTRONOMÍA -->
+                        <article class="tarjeta gastronomia">
+                            <div class="tarjeta-icono" aria-hidden="true">👨‍🍳</div>
+                            <h3>Gastronomía</h3>
+                            <p class="tarjeta-descripcion">Aprendé técnicas culinarias y elaboración de alimentos.</p>
+                            <ul>
+                                <li>Cocinero/a</li>
+                                <li>Conservación de alimentos</li>
+                                <li>Elaboración de alfajores regionales</li>
+                                <li>Maestro/a pizzero/a rotisero/a</li>
+                                <li>Elaboración de pastas alimenticias</li>
+                                <li>Panadero/a</li>
+                                <li>Cocina de medio oriente</li>
+                            </ul>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Buenas prácticas de manipulación, preparación de recetas, organización del
+                                        trabajo y técnicas de producción, manteniendo las normas de seguridad e higiene.
+                                    </p>
+                                    <h4>Duración orientativa</h4>
+                                    <p>Entre 90 y 540 horas, según el curso.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Consultá la duración en particular de cada curso y la
+                                        disponibilidad real con el CFP.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                        <!-- TERCER ARTÍCULO / ÁREA CLIMATIZACIÓN -->
+                        <article class="tarjeta climatizacion">
+                            <div class="tarjeta-icono" aria-hidden="true">❄️</div>
+                            <h3>Climatización</h3>
+                            <p class="tarjeta-descripcion">Formación técnica para el mantenimiento de equipos de
+                                climatización y refrigeración.</p>
+                            <ul>
+                                <li>Instalador/a reparador/a de equipos de climatización</li>
+                            </ul>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Identificación de componentes, instalación, mantenimiento preventivo, reparación,
+                                        diagnóstico de fallas y seguridad.</p>
+                                    <h4>Duración orientativa</h4>
+                                    <p>600 horas.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Consultá la duración en particular de cada curso y la
+                                        disponibilidad real con el CFP.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                        <!-- CUARTO ARTÍCULO / ÁREA MARKETING Y VENTAS -->
+                        <article class="tarjeta marketing">
+                            <div class="tarjeta-icono" aria-hidden="true">📣</div>
+                            <h3>Marketing y ventas</h3>
+                            <p class="tarjeta-descripcion">Comunicación digital y estrategias comerciales.</p>
+                            <ul>
+                                <li>Gestión de redes sociales</li>
+                                <li>Operador/a de herramientas de marketing y venta general</li>
+                            </ul>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Planificación de contenidos, públicos objetivos, comunicación digital y
+                                        herramientas de venta.</p>
+                                    <h4>Duración orientativa</h4>
+                                    <p>Entre 144 y 150 horas, según el curso.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Consultá la duración en particular de cada curso y la
+                                        disponibilidad real con el CFP.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                        <!-- QUINTO ARTÍCULO / ÁREA COMUNICACIÓN Y GESTIÓN -->
+                        <article class="tarjeta comunicacion">
+                            <div class="tarjeta-icono" aria-hidden="true">🗣️</div>
+                            <h3>Comunicación y gestión</h3>
+                            <p class="tarjeta-descripcion">Comunicación efectiva y trabajo con personas.</p>
+                            <ul>
+                                <li>Capacitación en oratoria</li>
+                                <li>Administración y conducción de RRHH</li>
+                                <li>Relaciones públicas</li>
+                            </ul>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Presentaciones orales, trabajo en equipo, relaciones institucionales y
+                                        organización de recursos humanos.</p>
+                                    <h4>Duración orientativa</h4>
+                                    <p>Entre 120 y 180 horas, según el curso.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Consultá la duración en particular de cada curso y la
+                                        disponibilidad real con el CFP.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                        <!-- SEXTO ARTÍCULO / ÁREA ADMINISTRACIÓN CONTABLE -->
+                        <article class="tarjeta administracion">
+                            <div class="tarjeta-icono" aria-hidden="true">🧮</div>
+                            <h3>Administración contable</h3>
+                            <p class="tarjeta-descripcion">Herramientas para tareas contables y administrativas.</p>
+                            <ul>
+                                <li>Liquidación de impuestos</li>
+                                <li>Operador/a de software de gestión administrativo contable</li>
+                            </ul>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Conceptos tributarios, documentación, cálculos y procedimientos administrativos.
+                                    </p>
+                                    <h4>Duración orientativa</h4>
+                                    <p>100 horas.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Consultá la duración en particular de cada curso y la
+                                        disponibilidad real con el CFP.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                    </div>
+                    <!-- DIV con lo que aparecerá si está seleccionado "tecnología digital" -->
+                    <div class="grilla-cursos grilla-individuales cursos-digital" aria-label="Cursos del área digital">
+                        <!-- TECNOLOGÍA DIGITAL / HABILIDADES DIGITALES -->
+                        <article class="tarjeta tarjeta-individual">
+                            <div class="tarjeta-icono" aria-hidden="true">💻</div>
+                            <h3>Habilidades digitales</h3>
+                            <p class="tarjeta-descripcion">Aprendé a usar herramientas digitales de manera autónoma y
+                                eficiente.</p>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Uso de equipamiento, almacenamiento y gestión de archivos, aplicaciones,
+                                        seguridad digital, introducción a la IA.</p>
+                                    <h4>Duración del curso</h4>
+                                    <p>90 horas.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Importante: contenidos, duración, modalidad y vacantes
+                                        sujetos a confirmación institucional.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                        <!-- TECNOLOGÍA DIGITAL / PROGRAMACIÓN -->
+                        <article class="tarjeta tarjeta-individual">
+                            <div class="tarjeta-icono" aria-hidden="true">💻</div>
+                            <h3>Programación</h3>
+                            <p class="tarjeta-descripcion">Aprendé a resolver problemas con pensamiento computacional en
+                                Python.</p>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Variables, condiciones, ciclos, funciones y proyectos sencillos.</p>
+                                    <h4>Duración del curso</h4>
+                                    <p>90 horas.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Importante: contenidos, duración, modalidad y vacantes
+                                        sujetos a confirmación institucional.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                        <!-- TECNOLOGÍA DIGITAL / DISEÑO DE PÁGINA WEB -->
+                        <article class="tarjeta tarjeta-individual">
+                            <div class="tarjeta-icono" aria-hidden="true">🌐</div>
+                            <h3>Diseño de Página Web</h3>
+                            <p class="tarjeta-descripcion">Creá páginas web con HTML y CSS.</p>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Estructura HTML, estilos CSS, Flexbox, Grid y diseño adaptable.</p>
+                                    <h4>Duración del curso</h4>
+                                    <p>180 horas.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Importante: contenidos, duración, modalidad y vacantes
+                                        sujetos a confirmación institucional.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                        <!-- TECNOLOGÍA DIGITAL / CAPACITACIÓN EN IA -->
+                        <article class="tarjeta tarjeta-individual">
+                            <div class="tarjeta-icono" aria-hidden="true">🤖</div>
+                            <h3>Capacitación en IA</h3>
+                            <p class="tarjeta-descripcion">Conocé herramientas de inteligencia artificial.</p>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Uso de asistentes de IA, instrucciones, verificación de resultados y uso
+                                        responsable.</p>
+                                    <h4>Duración del curso</h4>
+                                    <p>150 horas.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Importante: contenidos, duración, modalidad y vacantes
+                                        sujetos a confirmación institucional.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                        <!-- TECNOLOGÍA DIGITAL / OPERADOR/A DE SOFTWARE DE GESTIÓN ADMINISTRATIVO CONTABLE -->
+                        <article class="tarjeta tarjeta-individual">
+                            <div class="tarjeta-icono" aria-hidden="true">📊</div>
+                            <h3>Operador/a de software de gestión administrativo contable</h3>
+                            <p class="tarjeta-descripcion">Utilizá herramientas digitales para tareas administrativas.
+                            </p>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Ejecución eficiente de operaciones básicas de una empresa, gestión de movimiento
+                                        de fondos, conceptos de contabilidad, informes y estados contables.</p>
+                                    <h4>Duración del curso</h4>
+                                    <p>150 horas.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Importante: contenidos, duración, modalidad y vacantes
+                                        sujetos a confirmación institucional.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                    </div>
+                    <!-- DIV con lo que aparecerá si está seleccionado "gastronomía" -->
+                    <div class="grilla-cursos grilla-individuales cursos-gastronomia"
+                        aria-label="Cursos del área gastronomia">
+                        <!-- GASTRONOMÍA / COCINERO/A -->
+                        <article class="tarjeta tarjeta-individual">
+                            <div class="tarjeta-icono" aria-hidden="true">🍲</div>
+                            <h3>Cocinero/a</h3>
+                            <p class="tarjeta-descripcion">Desarrollá técnicas de cocina y organización.</p>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Elaborar, presentar, conservar y supervisar preparaciones culinarias, siguiendo
+                                        normas de seguridad e higiene. </p>
+                                    <h4>Duración del curso</h4>
+                                    <p>90 horas.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Importante: contenidos, duración, modalidad y vacantes
+                                        sujetos a confirmación institucional.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                        <!-- GASTRONOMÍA / CONSERVACIÓN DE ALIMENTOS -->
+                        <article class="tarjeta tarjeta-individual">
+                            <div class="tarjeta-icono" aria-hidden="true">🥫</div>
+                            <h3>Conservación de alimentos</h3>
+                            <p class="tarjeta-descripcion">Conocé métodos de conservación seguros.</p>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Diferentes técnicas de conservación de alimentos, aplicando procedimientos de
+                                        elaboración y conservación, manipulación de materias primas y utensilios, y
+                                        normas de seguridad e higiene alimentaria.</p>
+                                    <h4>Duración del curso</h4>
+                                    <p>250 horas.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Importante: contenidos, duración, modalidad y vacantes
+                                        sujetos a confirmación institucional.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                        <!-- GASTRONOMÍA / ELABORACIÓN DE ALFAJORES REGIONALES -->
+                        <article class="tarjeta tarjeta-individual">
+                            <div class="tarjeta-icono" aria-hidden="true">🍪</div>
+                            <h3>Elaboración de alfajores regionales</h3>
+                            <p class="tarjeta-descripcion">Aprendé a elaborar productos regionales.</p>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Reconocer y elaborar diferentes tipos de alfajores regionales, preparando masas,
+                                        rellenos y coberturas. Aplicación de técnicas de elaboración, decoración y
+                                        presentación, siguiendo recetas y bajo las normativas de seguridad e higiene.
+                                    </p>
+                                    <h4>Duración del curso</h4>
+                                    <p>100 horas.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Importante: contenidos, duración, modalidad y vacantes
+                                        sujetos a confirmación institucional.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                        <!-- GASTRONOMÍA / MAESTRO/A PIZZERO/A ROTISERO/A -->
+                        <article class="tarjeta tarjeta-individual">
+                            <div class="tarjeta-icono" aria-hidden="true">🍕</div>
+                            <h3>Maestro/a pizzero/a rotisero/a</h3>
+                            <p class="tarjeta-descripcion">Incorporá técnicas de pizzería y rotisería.</p>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Preparación, elaboración y control de materias primas. Criterios de calidad,
+                                        cantidad y control. Normas de seguridad e higiene.</p>
+                                    <h4>Duración del curso</h4>
+                                    <p>300 horas.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Importante: contenidos, duración, modalidad y vacantes
+                                        sujetos a confirmación institucional.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                        <!-- GASTRONOMÍA / ELABORACIÓN DE PASTAS ALIMENTICIAS -->
+                        <article class="tarjeta tarjeta-individual">
+                            <div class="tarjeta-icono" aria-hidden="true">🍝</div>
+                            <h3>Elaboración de pastas alimenticias</h3>
+                            <p class="tarjeta-descripcion">Prepará pastas frescas y sus acompañamientos.</p>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Amasado, formatos, rellenos, salsas y manipulación. Disposición del espacio y
+                                        medios siguiendo normas de seguidad e higiene.</p>
+                                    <h4>Duración del curso</h4>
+                                    <p>252 horas.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Importante: contenidos, duración, modalidad y vacantes
+                                        sujetos a confirmación institucional.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                        <!-- GASTRONOMÍA / PANADERO/A -->
+                        <article class="tarjeta tarjeta-individual">
+                            <div class="tarjeta-icono" aria-hidden="true">🍞</div>
+                            <h3>Panadero/a</h3>
+                            <p class="tarjeta-descripcion">Aprendé procesos de panificación.</p>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Preparación, presentación y conservación de productos de panadería. Selección de
+                                        materia prima y aplicación de normas de seguridad e higiene en manipulación de
+                                        alimentos.</p>
+                                    <h4>Duración del curso</h4>
+                                    <p>540 horas.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Importante: contenidos, duración, modalidad y vacantes
+                                        sujetos a confirmación institucional.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                        <!-- GASTRONOMÍA / COCINA DE MEDIO ORIENTE -->
+                        <article class="tarjeta tarjeta-individual">
+                            <div class="tarjeta-icono" aria-hidden="true">🥙</div>
+                            <h3>Cocina de medio oriente</h3>
+                            <p class="tarjeta-descripcion">Explorá recetas y técnicas de cocina regional.</p>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Aprender a reconocer y utilizar ingredientes, especias y técnicas para elaborar
+                                        platos característicos. Selección y manipulación correcta de materias primas,
+                                        interpretando recetas y aplicando procedimientos de cocción, presentación y
+                                        buenas prácticas de manufactura, respetando las normas de higiene y seguridad
+                                        alimentaria. Además de organización, gestión de recursos, trabajo en equipo y
+                                        planificación de menús.</p>
+                                    <h4>Duración del curso</h4>
+                                    <p>90 horas.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Importante: contenidos, duración, modalidad y vacantes
+                                        sujetos a confirmación institucional.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                    </div>
+                    <!-- DIV con lo que aparecerá si está seleccionado "climatización" -->
+                    <div class="grilla-cursos grilla-individuales cursos-climatizacion"
+                        aria-label="Cursos del área climatizacion">
+                        <!-- CLIMATIZACIÓN / INSTALADOR/A Y REPARADOR/A DE EQUIPOS DE CLIMATIZACIÓN -->
+                        <article class="tarjeta tarjeta-individual">
+                            <div class="tarjeta-icono" aria-hidden="true">❄️</div>
+                            <h3>Instalador/a y reparador/a de equipos de climatización</h3>
+                            <p class="tarjeta-descripcion">Formate en instalación y reparación de equipos.</p>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Componentes, instalación, mantenimiento, diagnóstico y reparación de equipos de
+                                        climatización y refrigeración.</p>
+                                    <h4>Duración del curso</h4>
+                                    <p>600 horas.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Importante: contenidos, duración, modalidad y vacantes
+                                        sujetos a confirmación institucional.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                    </div>
+                    <!-- DIV con lo que aparecerá si está seleccionado "marketing" -->
+                    <div class="grilla-cursos grilla-individuales cursos-marketing"
+                        aria-label="Cursos del área marketing">
+                        <!-- MARKETING / GESTIÓN DE REDES SOCIALES -->
+                        <article class="tarjeta tarjeta-individual">
+                            <div class="tarjeta-icono" aria-hidden="true">📱</div>
+                            <h3>Gestión de redes sociales</h3>
+                            <p class="tarjeta-descripcion">Planificá y gestioná contenido para redes.</p>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Crear, administrar y potenciar cuentas. Generar contenido y analizar resultados
+                                        para redes sociales.</p>
+                                    <h4>Duración del curso</h4>
+                                    <p>150 horas.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Importante: contenidos, duración, modalidad y vacantes
+                                        sujetos a confirmación institucional.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                        <!-- MARKETING / OPERADOR/A DE HERRAMIENTAS DE MARKETING Y VENTA GENERAL -->
+                        <article class="tarjeta tarjeta-individual">
+                            <div class="tarjeta-icono" aria-hidden="true">📣</div>
+                            <h3>Operador/a de herramientas de marketing y venta general</h3>
+                            <p class="tarjeta-descripcion">Conocé recursos para promocionar productos y servicios.</p>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Utilización de plataformas de e-commerce. Aplicación de herramientas de mercadeo
+                                        digital y de medición de audiencia. Redes sociales como medio de promoción.</p>
+                                    <h4>Duración del curso</h4>
+                                    <p>144 horas.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Importante: contenidos, duración, modalidad y vacantes
+                                        sujetos a confirmación institucional.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                    </div>
+                    <!-- DIV con lo que aparecerá si está seleccionado "comunicación" -->
+                    <div class="grilla-cursos grilla-individuales cursos-comunicacion"
+                        aria-label="Cursos del área comunicacion">
+                        <!-- COMUNICACIÓN / CAPACITACIÓN EN ORATORIA -->
+                        <article class="tarjeta tarjeta-individual">
+                            <div class="tarjeta-icono" aria-hidden="true">🎤</div>
+                            <h3>Capacitación en oratoria</h3>
+                            <p class="tarjeta-descripcion">Mejorá tus habilidades para hablar en público.</p>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Potenciar tu voz, gestos y postura. Fortalecer la confianza. Transmitir ideas con
+                                        claridad, fluidez, dicción y profesionalismo.</p>
+                                    <h4>Duración del curso</h4>
+                                    <p>120 horas.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Importante: contenidos, duración, modalidad y vacantes
+                                        sujetos a confirmación institucional.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                        <!-- COMUNICACIÓN / ADMINISTRACIÓN Y CONDUCCIÓN DE RRHH -->
+                        <article class="tarjeta tarjeta-individual">
+                            <div class="tarjeta-icono" aria-hidden="true">🤝</div>
+                            <h3>Administración y conducción de RRHH</h3>
+                            <p class="tarjeta-descripcion">Conocé tareas de organización de recursos humanos.</p>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Herramientas y procesos clave del área de Recursos Humanos: selección de
+                                        personal, capacitación, documentación laboral, trabajo en equipo y más.</p>
+                                    <h4>Duración del curso</h4>
+                                    <p>180 horas.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Importante: contenidos, duración, modalidad y vacantes
+                                        sujetos a confirmación institucional.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                        <!-- COMUNICACIÓN / RELACIONES PÚBLICAS -->
+                        <article class="tarjeta tarjeta-individual">
+                            <div class="tarjeta-icono" aria-hidden="true">🗣️</div>
+                            <h3>Relaciones públicas</h3>
+                            <p class="tarjeta-descripcion">Aprendé estrategias de comunicación institucional.</p>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Desarrollar habilidades de comunicación efectiva, atención al público, manejo de
+                                        vínculos, organización de eventos e imagen institucional, incorporando
+                                        herramientas para desenvolverse en ámbitos laborales y profesionales.</p>
+                                    <h4>Duración del curso</h4>
+                                    <p>120 horas.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Importante: contenidos, duración, modalidad y vacantes
+                                        sujetos a confirmación institucional.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                    </div>
+                    <!-- DIV con lo que aparecerá si está seleccionado "administración" -->
+                    <div class="grilla-cursos grilla-individuales cursos-administracion"
+                        aria-label="Cursos del área administracion">
+                        <!-- ADMINISTRACIÓN / LIQUIDACIÓN DE IMPUESTOS -->
+                        <article class="tarjeta tarjeta-individual">
+                            <div class="tarjeta-icono" aria-hidden="true">🧮</div>
+                            <h3>Liquidación de impuestos</h3>
+                            <p class="tarjeta-descripcion">Introducite en procedimientos tributarios.</p>
+                            <details class="ampliacion">
+                                <summary>
+                                    <span class="ver-mas">
+                                        Ver más <span aria-hidden="true"><i class="ri-arrow-down-s-line"></i></span>
+                                    </span>
+                                    <span class="ver-menos">
+                                        Ver menos <span aria-hidden="true"><i class="ri-arrow-up-s-line"></i></span>
+                                    </span>
+                                </summary>
+                                <div class="detalle-contenido">
+                                    <h4>¿Qué vas a aprender?</h4>
+                                    <p>Gestionar obligaciones tributarias y aplicar herramientas de liquidación
+                                        impositiva. Comprender la normativa vigente y resolver casos prácticos de IVA,
+                                        Ganancias, Monotributo e Ingresos Brutos.</p>
+                                    <h4>Duración del curso</h4>
+                                    <p>100 horas.</p>
+                                    <h4>Modalidad</h4>
+                                    <p>Presencial, con actividades prácticas.</p>
+                                    <p class="aviso">Importante: contenidos, duración, modalidad y vacantes
+                                        sujetos a confirmación institucional.</p>
+                                    <a href="https://wa.me/5491128383351" target="_blank"
+                                        rel="noopener noreferrer">Quiero más info <i class="ri-send-plane-line"></i></a>
+                                </div>
+                            </details>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CUARTA SECCIÓN / SEDES -->
+        <section class="sedes" id="sedes">
+            <div class="contenedor-sedes">
+                <div class="sedes-encabezado">
+                    <h2>Nuestras sedes</h2>
+                    <p>Conocé los espacios donde brindamos nuestras propuestas de formación profesional.</p>
+                </div>
+                <div class="sedes-grid">
+                    <!-- SEDE CENTRAL -->
+                    <article class="sede-tarjeta">
+                        <span class="sede-etiqueta">Sede central</span>
+                        <h3>Rafael Castillo</h3>
+                        <p class="sede-direccion">Sudamérica 2550, Rafael Castillo, La Matanza.</p>
+                        <div class="mapa-sede">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.531868814033!2d-58.6131828!3d-34.7169856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc69b16e2a23b%3A0xb7f0e8d883348887!2sSudam%C3%A9rica%202550%2C%20B1755%20Rafael%20Castillo%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1794352780021!5m2!1ses-419!2sar"
+                                width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                    </article>
+                    <!-- SUBSEDE SAN JUSTO -->
+                    <article class="sede-tarjeta">
+                        <span class="sede-etiqueta">Subsede CICM</span>
+                        <h3>San Justo</h3>
+                        <p class="sede-direccion">Entre Ríos 3026, San Justo, La Matanza.</p>
+                        <div class="mapa-sede">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.140456521254!2d-58.5599336!3d-34.676404399999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc628d4bcfa9f%3A0xe9bda533558fcdfc!2sEntre%20R%C3%ADos%203026%2C%20B1754AWB%20San%20Justo%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1794352708590!5m2!1ses-419!2sar"
+                                width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                    </article>
+                    <!-- SUBSEDE GONZÁLEZ CATÁN -->
+                    <article class="sede-tarjeta">
+                        <span class="sede-etiqueta">Subsede Instituto Centro San José</span>
+                        <h3>González Catán</h3>
+                        <p class="sede-direccion">Domingo Victorio de Achega 5851, González Catán, La Matanza.</p>
+                        <div class="mapa-sede">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1638.807958912301!2d-58.6136341!3d-34.765266849999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc4f7ba118cc9%3A0x287ba867fbc76143!2sDomingo%20Victorio%20de%20Achega%205851%2C%20B1758%20Gonz%C3%A1lez%20Cat%C3%A1n%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1794352557252!5m2!1ses-419!2sar"
+                                width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- QUINTA SECCIÓN / INSCRIPCIÓN -->
+        <section class="franja-final" id="inscripcion" aria-label="Inscripciones">
+            <div class="imagen-cta"></div>
+            <div class="cta">
+                <div>
+                    <h2>¿Listo para dar el primer paso?</h2>
+                    <p>Consultá la oferta vigente y cómo inscribirte.</p>
+                </div>
+                <a class="boton boton-claro" href="https://wa.me/5491128383351" target="_blank"
+                    rel="noopener noreferrer">Consultar inscripciones</a>
+            </div>
+            </div>
+        </section>
+        <section class="redes" aria-label="Redes sociales">
+            <div class="social" id="contacto">
+                <h2>Contactanos o seguinos en nuestras redes</h2>
+                <p>Y enterate de todas las novedades</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/cfp421matanza/?hl=es-la" target="_blank"
+                        rel="noopener noreferrer"><img src="assets/img/cfp_instagram.png" alt="Instragram"
+                            class="logo-redes"></a>
+                    <a href="https://www.facebook.com/cfp421/?locale=es_LA" target="_blank"
+                        rel="noopener noreferrer"><img src="assets/img/cfp_facebook.png" alt="Facebook" class="logo-redes"></a>
+                    <a href="https://wa.me/5491128383351" target="_blank" rel="noopener noreferrer"><img
+                            src="assets/img/cfp_whatsapp.png" alt="WhatsApp" class="logo-redes"></a>
+                    <a href="mailto:infocfp421@gmail.com"><img src="assets/img/cfp_mail.png" alt="Mail" class="logo-redes"></a>
+                </div>
+            </div>
+        </section>
+        <section class="frase-institucional" aria-label="Lema institucional">
+            <div class="frase-contenido">
+                <blockquote>
+                    <p>“Siempre es tiempo de construir futuro.”</p>
+                </blockquote>
+            </div>
+        </section>
+    </main>
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie">
+        <div class="contenedor pie-contenido">
+            <strong>CFP 421 <small>· La Matanza</small></strong>
+            <nav aria-label="Navegación del pie">
+                <a href="#"><img src="assets/img/footer_inicio.png" alt="Inicio" class="enlace-icono"></a>
+                <a href="#cursos"><img src="assets/img/footer_cursos.png" alt="Cursos" class="enlace-icono"></a>
+                <a href="#sedes"><img src="assets/img/footer_sedes.png" alt="Sedes" class="enlace-icono"></a>
+                <a href="#contacto"><img src="assets/img/footer_contacto.png" alt="contacto" class="enlace-icono"></a>
+                <a href="#inscripcion"><img src="assets/img/footer_inscripcion.png" alt="Inscripcion" class="enlace-icono"></a>
+            </nav>
+            <span>Diseñado en el curso de Diseño de Página Web</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>
