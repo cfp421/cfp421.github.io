@@ -951,7 +951,9 @@ p {
     background-position: 90% center;
     background-repeat: no-repeat;
     }
-
+    .hero-texto h2 {
+        text-align: start;
+    }
     .hero-texto p {
     max-width: none;
     width: 100%;
